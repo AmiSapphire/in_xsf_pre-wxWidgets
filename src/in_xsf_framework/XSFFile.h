@@ -40,7 +40,7 @@ protected:
 	bool hasFile;
 	std::vector<std::uint8_t> rawData, reservedSection, programSection;
 	TagList tags;
-	std::filesystem::path filePath; readTagsOnly = false);
+	std::filesystem::path filePath;
 	std::string FormattedTitleOptionalBlock(const std::string &block, bool &hadReplacement, unsigned level) const;
 public:
 	XSFFile();
