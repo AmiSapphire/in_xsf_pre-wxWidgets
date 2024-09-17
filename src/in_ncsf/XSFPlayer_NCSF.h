@@ -38,10 +38,10 @@ class XSFPlayer_NCSF : public XSFPlayer
 	bool LoadNCSF();
 public:
 	XSFPlayer_NCSF(const std::filesystem::path &path);
-	~XSFPlayer_NCSF();
-	bool Load();
-	void GenerateSamples(std::vector<std::uint8_t> &buf, unsigned offset, unsigned samples);
-	void Terminate();
+	~XSFPlayer_NCSF() override;
+	bool Load() override;
+	void GenerateSamples(std::vector<std::uint8_t> &buf, unsigned offset, unsigned samples) override;
+	void Terminate() override;
 
 	void SetInterpolation(unsigned interpolation);
 	void SetMutes(const std::bitset<16> &newMutes);

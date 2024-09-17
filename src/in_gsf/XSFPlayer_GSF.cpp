@@ -28,10 +28,10 @@ class XSFPlayer_GSF : public XSFPlayer
 {
 public:
 	XSFPlayer_GSF(const std::filesystem::path &path);
-	~XSFPlayer_GSF() { this->Terminate(); }
-	bool Load();
-	void GenerateSamples(std::vector<std::uint8_t> &buf, unsigned offset, unsigned samples);
-	void Terminate();
+	~XSFPlayer_GSF() override { this->Terminate(); }
+	bool Load() override;
+	void GenerateSamples(std::vector<std::uint8_t> &buf, unsigned offset, unsigned samples) override;
+	void Terminate() override;
 };
 
 const char *XSFPlayer::WinampDescription = "GSF Decoder";

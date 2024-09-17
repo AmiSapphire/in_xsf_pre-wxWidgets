@@ -38,10 +38,10 @@ class XSFPlayer_SNSF : public XSFPlayer
 {
 public:
 	XSFPlayer_SNSF(const std::filesystem::path &path);
-	~XSFPlayer_SNSF() { this->Terminate(); }
-	bool Load();
-	void GenerateSamples(std::vector<std::uint8_t> &buf, unsigned offset, unsigned samples);
-	void Terminate();
+	~XSFPlayer_SNSF() override { this->Terminate(); }
+	bool Load() override;
+	void GenerateSamples(std::vector<std::uint8_t> &buf, unsigned offset, unsigned samples) override;
+	void Terminate() override;
 };
 
 const char *XSFPlayer::WinampDescription = "SNSF Decoder";
